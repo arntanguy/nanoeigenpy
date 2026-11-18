@@ -1,0 +1,27 @@
+[build-system]
+build-backend = "cmeel"
+requires = [
+  "cmeel[build]",
+  "jrl-cmakemodules",
+  "cmeel-eigen >=3.4",
+  "pytest",
+  "numpy >=1.22",
+  "scipy >=1.10.0"
+]
+
+[project]
+name = "nanoeigenpy"
+version = "0.5.0"
+description = "A support library for bindings between Eigen/C++ and Python, based on nanobind"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy >=1.22",
+  "scipy >=1.10.0"
+]
+
+[tool.cmeel]
+run-tests = true
+configure-args = [
+  "-DBUILD_TESTING=ON",
+]
