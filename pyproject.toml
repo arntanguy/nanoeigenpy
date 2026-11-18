@@ -3,25 +3,33 @@ build-backend = "cmeel"
 requires = [
   "cmeel[build]",
   "jrl-cmakemodules",
-  "cmeel-eigen >=3.4",
+  "cmeel-eigen",
+  "nanobind",
+  "numpy>=2.0",
   "pytest",
-  "numpy >=1.22",
-  "scipy >=1.10.0"
+  "scipy",
 ]
 
 [project]
-name = "nanoeigenpy"
-version = "0.5.0"
-description = "A support library for bindings between Eigen/C++ and Python, based on nanobind"
-readme = "README.md"
-requires-python = ">=3.10"
 dependencies = [
-  "numpy >=1.22",
-  "scipy >=1.10.0"
+  "numpy >=2.0",
 ]
+description = "A support library for bindings between Eigen/C++ and Python, based on nanobind"
+license = "BSD-3-Clause"
+name = "nanoeigenpy"
+requires-python = ">=3.10"
+version = "0.5.0"
 
 [tool.cmeel]
 run-tests = true
 configure-args = [
   "-DBUILD_TESTING=ON",
 ]
+
+[project.urls]
+homepage = "https://github.com/cmake-wheel/nanobind"
+repository = "https://github.com/cmake-wheel/nanobind.git"
+upstream = "https://github.com/simple-robotics/nanobind"
+
+[tool.tomlsort]
+all = true
